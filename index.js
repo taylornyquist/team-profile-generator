@@ -1,6 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+const generateHtml = require('./src/template.js');
+
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -234,8 +236,13 @@ function promptTeamMember() {
         });
 };
 
-function generatePage(teamArray) {
-    fs.writeFile()
+// do something with teh teamArray data.  Filter, Map, Sort whatever and then input it into the template literal.
+
+function generatePage() {
+    fs.writeFile('./dist/index.html', generateHtml(), (err) => {
+        if (err) throw err;
+        console.log("File Saved!");
+    })
 
 }
 
@@ -243,7 +250,7 @@ function generatePage(teamArray) {
 
 
 
+generatePage();
 
 
-
-init();
+// init();
