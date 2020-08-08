@@ -227,16 +227,17 @@ function promptTeamMember() {
                     });
 
             } else if (newTeamMember.teamRole === "I don't want to add any more team members") {
-                console.log("No new team member added");
+                console.log("Finished adding team members!");
                 console.log(teamArray);
-                return;   // send user somwhere next...
-
-
+                generatePage(teamArray);
             };
         });
 };
 
+function generatePage(teamArray) {
+    fs.writeFile()
 
+}
 
 
 
