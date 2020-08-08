@@ -69,14 +69,14 @@ function init() {
         },
     ])
         .then(managerData => {
-            console.log(managerData);
+            // console.log(managerData);
             const manager = new Manager(
                 managerData.managerName,
                 managerData.managerId,
                 managerData.managerEmail,
                 managerData.managerOfficeNumber);
             teamArray.push(manager);
-            console.log(teamArray);
+            // console.log(teamArray);
             promptTeamMember();
         });
 };
@@ -152,14 +152,14 @@ function promptTeamMember() {
                     },
                 ])
                     .then(engineerData => {
-                        console.log(engineerData);
+                        // console.log(engineerData);
                         const engineer = new Engineer(
                             engineerData.engineerName,
                             engineerData.engineerId,
                             engineerData.engineerEmail,
                             engineerData.engineerGithub);
                         teamArray.push(engineer);
-                        console.log(teamArray);
+                        // console.log(teamArray);
                         promptTeamMember();
                     });
 
@@ -217,26 +217,95 @@ function promptTeamMember() {
                     },
                 ])
                     .then(internData => {
-                        console.log(internData);
+                        // console.log(internData);
                         const intern = new Intern(
                             internData.internName,
                             internData.internId,
                             internData.internEmail,
                             internData.internSchool);
                         teamArray.push(intern);
-                        console.log(teamArray);
+                        // console.log(teamArray);
                         promptTeamMember();
                     });
 
             } else if (newTeamMember.teamRole === "I don't want to add any more team members") {
                 console.log("Finished adding team members!");
-                console.log(teamArray);
-                generatePage(teamArray);
+                // console.log(teamArray);
+                sortTeamArray(teamArray);
+                // generatePage(teamArray);
             };
         });
 };
 
 // do something with teh teamArray data.  Filter, Map, Sort whatever and then input it into the template literal.
+// const mockTeamArray = [
+//     Manager {
+//       name: 'Bob',
+//       id: '1',
+//       email: 'bob@email.com',
+//       officeNumber: '11'
+//     },
+//     Engineer {
+//       name: 'Joe',
+//       id: '2',
+//       email: 'joe@email.com',
+//       github: 'joejoe45'
+//     },
+//     Intern {
+//       name: 'Suzy',
+//       id: '3',
+//       email: 'suzy@email.com',
+//       school: 'Harvard Yard'
+//     }
+// ];
+
+function generateManager(manager) {
+    `
+    <div class="card m-2 employee-card" style="width: 18rem;">
+                <div class="card-header">
+                    <h3>${manager.getName()}</h3>
+                    <h5>
+                        <i class="fa fa-coffee" aria-hidden="true"></i>
+                        ${manager.getRole()}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID: ${manager.getId()}</li>
+                    <li class="list-group-item">Email:
+                        <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a>
+                    </li>
+                    <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
+                </ul>
+            </div>
+    `
+};
+
+function sortTeamArray(teamArray) {
+    const html = [];
+
+    html.push(teamArray
+        .filter(employee => employee.getRole() === "Manager")
+        .map(manager => generateManager(manager))
+        .join("")
+    );
+
+    // html.push(teamArray
+    //     .filter(employee => employee.getRole() === "Engineer")
+    //     // .map(engineer => generateEngineer(engineer))
+    //     // .join("") 
+    // );
+
+    // html.push(teamArray
+    //     .filter(employee => employee.getRole() === "Intern")
+    //     // .map(intern => generateIntern(intern))
+    //     // .join("") 
+    // );
+
+    console.log(html.join(""));
+    return html.join("");
+
+};
+
+
 
 function generatePage() {
     fs.writeFile('./dist/index.html', generateHtml(), (err) => {
@@ -250,7 +319,7 @@ function generatePage() {
 
 
 
-generatePage();
+// generatePage();
 
 
-// init();
+init();

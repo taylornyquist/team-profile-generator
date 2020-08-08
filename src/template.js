@@ -56,33 +56,6 @@ const generateHtml = function() {
 
 
 
-
-
-
-
-
-    <!--Mock Object [
-  Manager {
-    name: 'Bob',
-    id: '1',
-    email: 'bob@email.com',
-    officeNumber: '11'
-  },
-  Engineer {
-    name: 'Joe',
-    id: '2',
-    email: 'joe@email.com',
-    github: 'joejoe45'
-  },
-  Intern {
-    name: 'Suzy',
-    id: '3',
-    email: 'suzy@email.com',
-    school: 'Harvard Yard'
-  }
-] -->
-
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -101,5 +74,4 @@ const generateHtml = function() {
   `
   };
   
-  module.exports = generateHtml;
-  
+module.exports = generateHtml;
