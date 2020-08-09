@@ -1,9 +1,8 @@
 // function to generate markdown for README
-const generateHtml = function() {
-    return ` 
-
-
-    <!DOCTYPE html>
+const generateHtml = function(html) {
+    return `
+    
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -27,34 +26,10 @@ const generateHtml = function() {
 
     <div class="container-fluid">
         <div class="row m-3">
-
-            <div class="card m-2 employee-card" style="width: 18rem;">
-                <div class="card-header">
-                    <h3>David Stern</h3>
-                    <h5>
-                        <i class="fa fa-coffee" aria-hidden="true"></i>
-                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                        <i class="fa fa-microchip" aria-hidden="true"></i>
-                        Manager</h5>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: 1234</li>
-                    <li class="list-group-item">Email:
-                        <a href="mailto:test@email.com">test@gmail.com</a>
-                    </li>
-                    <li class="list-group-item">Office Number: 2</li>
-                </ul>
-            </div>
-
-            
-
-
-
+        ${html}
         </div>
 
     </div>
-
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -67,7 +42,10 @@ const generateHtml = function() {
         crossorigin="anonymous"></script>
 </body>
 
-</html>
+</html> 
+
+
+    
 
 
 
