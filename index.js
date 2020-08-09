@@ -261,17 +261,50 @@ function promptTeamMember() {
 // ];
 
 function generateManager(manager) {
-    return `<div class="card m-2 employee-card" style="width: 18rem;"><div class="card-header"><h3>${manager.getName()}</h3><h5><i class="fa fa-coffee" aria-hidden="true"></i> ${manager.getRole()}</h5></div><ul class="list-group list-group-flush"><li class="list-group-item">ID: ${manager.getId()}</li><li class="list-group-item">Email:<a href="mailto:${manager.getEmail()}"> ${manager.getEmail()}</a></li><li class="list-group-item">Office Number: ${manager.officeNumber}</li></ul></div>`
+    return `
+    <div class="card my-3 mx-2 employee-card" style="width: 18rem;">
+        <div class="card-header">
+            <h3>${manager.getName()}</h3>
+            <h5><i class="fa fa-coffee" aria-hidden="true"></i> ${manager.getRole()}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">ID: ${manager.getId()}</li>
+            <li class="list-group-item">Email:<a href="mailto:${manager.getEmail()}"> ${manager.getEmail()}</a>
+            </li>
+            <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
+        </ul>
+    </div>`
 };
 
 function generateEngineer(engineer) {
-    return `<div class="card m-2 employee-card" style="width: 18rem;"><div class="card-header"><h3>${engineer.getName()}</h3><h5><i class="fa fa-microchip" aria-hidden="true"></i> ${engineer.getRole()}</h5></div><ul class="list-group list-group-flush"><li class="list-group-item">ID: ${engineer.getId()}</li><li class="list-group-item">Email:<a href="mailto:${engineer.getEmail()}"> ${engineer.getEmail()}</a></li><li class="list-group-item">GitHub:<a href="https://github.com/${engineer.getGithub()}" target="_blank"> ${engineer.getGithub()}</a></li></ul></div>`
+    return `
+    <div class="card my-3 mx-2 employee-card" style="width: 18rem;">
+        <div class="card-header">
+            <h3>${engineer.getName()}</h3>
+            <h5><i class="fa fa-microchip" aria-hidden="true"></i> ${engineer.getRole()}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">ID: ${engineer.getId()}</li>
+            <li class="list-group-item">Email:<a href="mailto:${engineer.getEmail()}"> ${engineer.getEmail()}</a></li>
+            <li class="list-group-item">GitHub:<a href="https://github.com/${engineer.getGithub()}" target="_blank"> ${engineer.getGithub()}</a></li>
+        </ul>
+    </div>`
 };
 
 function generateIntern(intern) {
-    return `<div class="card m-2 employee-card" style="width: 18rem;"><div class="card-header"><h3>${intern.getName()}</h3><h5><i class="fa fa-graduation-cap" aria-hidden="true"></i> ${intern.getRole()}</h5></div><ul class="list-group list-group-flush"><li class="list-group-item">ID: ${intern.getId()}</li><li class="list-group-item">Email:<a href="mailto:${intern.getEmail()}"> ${intern.getEmail()}</a></li><li class="list-group-item">School: ${intern.getSchool()}</li></ul></div>`
+    return `
+    <div class="card my-3 mx-2 employee-card" style="width: 18rem;">
+        <div class="card-header">
+            <h3>${intern.getName()}</h3>
+            <h5><i class="fa fa-graduation-cap" aria-hidden="true"></i> ${intern.getRole()}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">ID: ${intern.getId()}</li>
+            <li class="list-group-item">Email:<a href="mailto:${intern.getEmail()}"> ${intern.getEmail()}</a></li>
+            <li class="list-group-item">School: ${intern.getSchool()}</li>
+        </ul>
+    </div>`
 };
-
 
 
 function sortTeamArray(teamArray) {
