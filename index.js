@@ -14,7 +14,7 @@ function init() {
 
     console.log(`
         ============================================
-        Welcocme to the Team Profile Gnerator!
+        Welcome to the Team Profile Generator!
         Follow the prompts below to build your team.
         ============================================
     `);
