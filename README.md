@@ -2,7 +2,7 @@
 * A command line application for managing your employee contact info in an easy to read webpage.
 
 ## Description
-* This is a Node.js application that allows users to answer a few questions about their employees and the application will generate a professional webpage with the employee's contact cards.
+* This is a Node.js application that allows users to answer a few questions about their employees and the application will generate a professional webpage with the employees' contact cards.
 
 ## Links
 * https://github.com/taylornyquist/team-profile-generator
@@ -32,13 +32,13 @@ npm install inquirer & npm install --save-dev jest
 ```
 
 ## Tests
-To run tests, run the folloing command:
+To run tests, execute the following command:
 ```
 npm run test
 ```
 
 ## Run
-To run tests, run the folloing command:
+To run the application, execute the folloing command:
 ```
 node index.js
 ```
